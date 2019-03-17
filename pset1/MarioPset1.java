@@ -24,7 +24,7 @@ public class MarioPset1 {
 			for(int s = h-i-1; s > 0; s--) {
 				System.out.print(" ");
 			}
-			for(int b = 0; b <= i + 1; b++) {
+			for(int b = 0 ; b <= i+1; b++) {
 				System.out.print("#");
 			}
 		}
