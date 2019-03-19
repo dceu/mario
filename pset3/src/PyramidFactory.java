@@ -6,26 +6,28 @@ public class PyramidFactory {
 	public PyramidFactory() {};
 
 
-	public static Pyramid makePyramid() {
+	public Pyramid makePyramid() {
 		int h;
-		Pyramid p = new Pyramid();
 		do {
 			System.out.println("Give me an integer from 0 to 23: ");
 			Scanner input = new Scanner(System.in);
-			p.setHeight(input.nextInt());
-			h = p.getHeight();
+			h = input.nextInt();
 		} while ( h < 0 || h > 23);
-		return p;
+		return new Pyramid(h);
 
 	}
-	public static  void drawPyramid(Pyramid p) {
+	public void drawPyramid(Pyramid p) {
 		int c;
 		do	{
 			System.out.println("Type \'1\' to print to file, \'2\' to print to console: ");
 			Scanner input = new Scanner(System.in);
 			c = input.nextInt();
-			if (c == 1) {ToFilePrintPyramid.pyraPrint(p); break;}
-			if (c == 2) {ToConsolePrintPyramid.pyraPrint(p); break;}
+			if (c == 1) {
+				ToFilePrintPyramid fprint = new ToFilePrintPyramid();
+				fprint.pyraPrint(p); break;}
+			if (c == 2) {
+				ToConsolePrintPyramid cprint = new ToConsolePrintPyramid();
+				cprint.pyraPrint(p); break;}
 		}	while (c != 2 || c!=1);
 	}
 
