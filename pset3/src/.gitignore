@@ -1,5 +1,2 @@
-/MarioPset2.class
-/PrintPyramid.class
-/Pyramid.class
-/ToConsolePrintPyramid.class
-/ToFilePrintPyramid.class
+/bin
+*.class
